@@ -7,7 +7,7 @@ Isha Bule
 I started directly on SageMaker, finding it more convenient than setting up on my local machine. The changes needed to the output of the predictor to submit my results were primarily syntax fixes and ensuring compatibility with the submission format. I made changes to the output of the predictor to ensure that negative values were converted to zero
 
 ### What was the top ranked model that performed?
-The top-ranked model that performed the best among the ones I tried was the one with after trying different hyperparameters. This model significantly outperformed the others in terms of prediction accuracy.
+The best performing model, based on the fit summary , is the "WeightedEnsemble_L3" model, which achieved a score_val of -53.114142 with a root_mean_squared_error evaluation metric.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
@@ -26,21 +26,21 @@ If given more time with this dataset, I would focus on further fine-tuning the h
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|600|best_quality|none|1.80531|
-|add_features|600|best_quality|regression|0.61647|
-|hpo|600|best_quality|tabular autogluon|0.48355|
+|initial|600|best_quality|none|1.80472|
+|add_features|600|best_quality|regression|0.62593|
+|hpo|600|best_quality|tabular autogluon|0.4814|
+
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
-TODO: Replace the image below with your own.
 
-![model_train_score.png](model_train_score.png)
+![model_train_score.png](/model_train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
 TODO: Replace the image below with your own.
 
-![model_test_score.png](model_test_score.png)
+![model_test_score.png](/model_test_score.png)
 
 ## Summary
-TODO: Add your explanation
+In the process of developing a predictive model for bike demand using Amazon SageMaker, the initial approach began with basic model training and syntax adjustments to align the predictor's output with the required submission format. The most effective model identified from the initial models was the "WeightedEnsemble_L3," achieving a root_mean_squared_error of -53.114142. During exploratory data analysis, significant variables such as weather conditions, seasonal changes, and detailed datetime splits (year, month, day, and hour) were found to heavily influence bike demand. Incorporating these features resulted in an impressive 65.92% performance increase, highlighting their predictive importance. Further enhancements through hyperparameter tuning led to an additional improvement, pushing model performance up by 73.25%. If more time were allotted, the focus would shift to even finer hyperparameter adjustments and exploring advanced modeling techniques to potentially elevate performance further. This comprehensive approach underscores the critical interplay between feature engineering and hyperparameter tuning in optimizing predictive models.
